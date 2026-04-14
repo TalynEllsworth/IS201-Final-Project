@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scuba Diving</title>
+    <link rel="stylesheet" href="css/mystyles.css">
+</head>
+<body>
+    <div class="top-bar" id="top">
+        <a href="index.html">Back to Resume Page</a>
+        <a href="game.html">Play the Game</a>
+        <a href="#video-section">Jump to Video</a>
+        <a href="#tableau-section">Jump to Tableau Visual</a>
+    </div>
+    
+    <div class="other-box">
+        <h1>Scuba Diving</h1>
+        <p>The underwater world.</p>
+    </div>
+
+    <div class="second-box">
+        <h2>Why I Started Scuba Diving</h2>
+        <p>My family started scuba diving in order to experience a world that we were only able to see in pictures and videos. The ocean is a beautiful, peaceful place and scuba diving provided a way to explore it up close. This hobby pushes me to learn new skills and teaches me to appreciate nature. Scuba diving has given my family a way to discover new places and have unforgettable adventures underwater.</p>
+        <h3>Favorite Places to Scuba Dive</h3>
+        <ol>
+            <li>Mexico
+                <ul>
+                    <li>Cozumel</li>
+                    <li>San Carlos</li>
+                    <li>Cancun</li>                   
+                </ul>
+            </li>
+            <li>Belize</li>
+            <li>Hawaii</li>
+        </ol>
+    </div>
+
+    <div class="image-box">
+        <h2>Cozumel, Mexico 2025</h2>
+        <img src="assets/img/scuba image.jpg" alt="Talyn scuba diving.">
+    </div>
+
+    <div class="media-box" id="video-section">
+        <h2>Scuba Diving at The Great Barrier Reef</h2>
+        <p>This video shows a short scuba diving experience!</p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/R-4dMrdF4H8?si=Dq0dfsYO9sU67h7G" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>       
+    </div>
+
+    <div class="tableau-box" id="tableau-section">
+        <h2>Interative Tableau Graph</h2>
+        <p>Check out this cool Tableau graph about free diving!</p>
+        <div class='tableauPlaceholder' id='viz1710000000000' style='position: relative'>
+            <noscript>
+                <a href='https://public.tableau.com/views/FreeDiving/Freediving?:showVizHome=no'>
+                    <img alt='Freediving Tableau visualization' src='https://public.tableau.com/static/images/Fr/FreeDiving/Freediving/1.png' style='border: none'>
+                </a>
+            </noscript>
+            <object class='tableauViz' style='display:none;'>
+                <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F'>
+                <param name='embed_code_version' value='3'>
+                <param name='site_root' value=''>
+                <param name='name' value='FreeDiving/Freediving'>
+                <param name='tabs' value='no'>
+                <param name='toolbar' value='yes'>
+                <param name='showVizHome' value='no'>
+            </object>
+        </div>
+    </div>
+
+    <div class="second-box">
+        <h2>How to Get Scuba Certified</h2>
+        <p>To get scuba certified, start by signing up for beginner certification course through an organization like PADI or SSI. I am SSI certified. This course includes the basic scuba safety and equipment. It also involves practicing skills in a pool then completing a few open water dives with an instructor. During this process, you learn how to breathe underwater safely, clear your mask, control your buoyancy, and respond to common situations. Once you finish the classwork, pool training, and required dives, you earn your certification and can dive with one or more other certified divers in approved conditions.</p>
+        <p><a href="#top">Back to top</a></p>
+    </div>
+
+    <script type='text/javascript'>
+        const divElement = document.getElementById('viz1710000000000');
+        const vizElement = divElement.getElementsByTagName('object')[0];
+        vizElement.style.width = '100%';
+        vizElement.style.height = '700px';
+        const scriptElement = document.createElement('script');
+        scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+        vizElement.parentNode.insertBefore(scriptElement, vizElement);
+    </script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scuba Depth Guessing Game</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #d9f1ff;
+            text-align: center;
+            margin: 0;
+            padding: 40px 20px;
+            color: #08324a;            
+        }
+        .game-box {
+            max-width: 500px;
+            margin: 0 auto;
+            background-color: white;
+            border: 2px solid #7bbfdf;
+            padding: 30px;           
+        }
+        input, button {
+            padding: 10px;
+            font-size: 16px;
+            margin: 8px;            
+        }
+        button {
+            cursor: pointer;
+        }
+        a {
+            color: #045275;
+        }
+    </style>
+</head>
+    <div class="game-box">
+        <h1>Scuba Depth Guessing Game</h1>
+        <p>I am thinking of a dive depth from 0 to 80 feet. Try to guess it.</p>
+    
+        <input type="number" id="guess" min="10" max="80" placeholder="Enter a number">
+        <button onclick="checkGuess()">Guess</button>
+        <button onclick="resetGame()">Restart</button>
+
+        <p id="message">Make your first guess.</p>
+        <p id="tries">Guesses: 0</p>
+
+        <a href="fromscratch.html">Back to Suba Diving Page</a><br><br>
+        <a href="index.html">Back to Home Page</a>
+    </div>
+
+    <script>
+        let secretDepth = Math.floor(Math.random() * 71) + 10;
+        let guessCount = 0;
+
+        function checkGuess() {
+            const guessInput = document.getElementById('guess');
+            const guess = Number(guessInput.value);
+            const message = document.getElementById('message');
+            const tries = document.getElementById('tries');
+
+            if (guess < 10 || guess > 80 || Number.isNaN(guess)) {
+                message.textContent = 'Please enter a number between 10 and 80.';
+                return;
+            }
+
+            guessCount++;
+            tries.textContent = 'Guesses: ' + guessCount;
+
+            if (guess === secretDepth) {
+                message.textContent = 'Correct! You found the dive depth.';
+            } else if (guess < secretDepth) {
+                message.textContent = 'Too shallow. Guess a deeper number.';
+            } else {
+                message.textContent = 'Too deep. Guess a smaller number.';
+            }
+        }
+
+        function resetGame() {
+            secretDepth = Math.floor(Math.random() * 71) + 10;
+            guessCount = 0;
+            document.getElementById('guess').value = '';
+            document.getElementById('message').textContent = 'Make your first guess.';
+            document.getElementById('tries').textContent = 'Guesses: 0';
+        }       
+    </script>
+<body>
+    
+</body>
+</html>
